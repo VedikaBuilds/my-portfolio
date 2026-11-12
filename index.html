@@ -1,0 +1,616 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vedika Singh | Portfolio</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #faf9ff;
+            color: #29263a;
+            line-height: 1.7;
+        }
+
+        /* Navigation */
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px #29263a0d;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #7952b3;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #393448;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #7952b3;
+        }
+
+        /* Common Sections */
+
+        section {
+            padding: 85px 10%;
+        }
+
+        .section-title {
+            font-size: 34px;
+            color: #7952b3;
+            margin-bottom: 30px;
+        }
+
+        /* Home Section */
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero h3 {
+            color: #7952b3;
+            font-size: 21px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 6vw, 65px);
+            margin: 10px 0;
+            line-height: 1.2;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            color: #7952b3;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 600px;
+            color: #686477;
+            font-size: 17px;
+        }
+
+        .profile-img {
+            width: 270px;
+            height: 270px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid white;
+            box-shadow: 0 8px 30px #7952b333;
+        }
+
+        /* Buttons */
+
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            margin-right: 10px;
+            padding: 12px 25px;
+            background: #7952b3;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #603d96;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background: white;
+            color: #7952b3;
+            border: 2px solid #7952b3;
+        }
+
+        .btn-outline:hover {
+            background: #7952b3;
+            color: white;
+        }
+
+        /* About Section */
+
+        .about {
+            background: white;
+        }
+
+        .about p {
+            max-width: 850px;
+            color: #686477;
+            font-size: 17px;
+        }
+
+        /* Skills Section */
+
+        .skills-container {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+        }
+
+        /* Projects Section */
+
+        .projects-container {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px #29263a0c;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 25px #7952b326;
+        }
+
+        .card h3 {
+            color: #7952b3;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #686477;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #7952b3;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Education Section */
+
+        .education {
+            background: white;
+        }
+
+        .education-container {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .education-card {
+            background: #faf9ff;
+            padding: 28px;
+            border-radius: 14px;
+            border-left: 5px solid #7952b3;
+            box-shadow: 0 5px 20px #29263a0c;
+            transition: 0.3s;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .education-card h3 {
+            color: #7952b3;
+            margin-bottom: 10px;
+        }
+
+        .education-card h4 {
+            margin-bottom: 8px;
+        }
+
+        .education-card p {
+            color: #686477;
+        }
+
+        .education-card span {
+            display: inline-block;
+            margin-top: 12px;
+            color: #7952b3;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+
+        .contact {
+            text-align: center;
+            background: #f0eaff;
+        }
+
+        .contact p {
+            color: #686477;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            color: #686477;
+        }
+
+        /* Mobile Responsive */
+
+        @media (max-width: 750px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 14px;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            section {
+                padding: 60px 7%;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                justify-content: center;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .hero p {
+                margin: auto;
+            }
+
+            .profile-img {
+                width: 190px;
+                height: 190px;
+            }
+
+            .section-title {
+                font-size: 29px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <header>
+
+        <div class="logo"></div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Home Section -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h3>Hello, I'm</h3>
+
+            <h1>Vedika Singh</h1>
+
+            <h2>Computer Science Engineering Student</h2>
+
+            <p>
+                Hi, I'm Vedika Singh, a Computer Science Engineering
+                student pursuing B.Tech. I am passionate about
+                programming, Artificial Intelligence, and Machine
+                Learning. I have knowledge of C, C++, Java, Python,
+                HTML, and CSS. I enjoy exploring new technologies,
+                solving problems, and building practical projects.
+                My goal is to grow as a skilled software developer.
+            </p>
+
+            <a href="#projects" class="btn">
+                Explore My Projects
+            </a>
+
+            <a href="resume.pdf" class="btn btn-outline" download>
+                Download Resume
+            </a>
+
+        </div>
+
+        <img
+            src="images/profile.jpeg"
+            alt="Vedika Singh"
+            class="profile-img"
+        >
+
+    </section>
+
+
+    <!-- About Section -->
+
+    <section class="about" id="about">
+
+        <h2 class="section-title">About Me</h2>
+
+        <p>
+            I am pursuing B.Tech in Computer Science and Engineering
+            from MDU University. I am interested in software
+            development, Python programming, Artificial Intelligence
+            and Machine Learning.
+
+            I believe in continuous learning and improving my
+            technical skills through hands-on projects and
+            practical experience. I enjoy learning new technologies
+            and applying my knowledge to real-world problems.
+        </p>
+
+    </section>
+
+
+    <!-- Skills Section -->
+
+    <section id="skills">
+
+        <h2 class="section-title">My Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="card">
+                <h3>Programming Languages</h3>
+                <p>C, C++, Java, Python</p>
+            </div>
+
+            <div class="card">
+                <h3>Web Development</h3>
+                <p>HTML, CSS</p>
+            </div>
+
+            <div class="card">
+                <h3>AI & Machine Learning</h3>
+                <p>Machine Learning, Deep Learning</p>
+            </div>
+
+            <div class="card">
+                <h3>Data Analysis</h3>
+                <p>Excel, Tableau</p>
+            </div>
+
+            <div class="card">
+                <h3>Development Tools</h3>
+                <p>Git, GitHub, VS Code</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects Section -->
+
+    <section id="projects">
+
+        <h2 class="section-title">My Projects</h2>
+
+        <div class="projects-container">
+
+            <div class="card">
+
+                <h3>Emojify - Deep Learning</h3>
+
+                <p>
+                    A deep learning project focused on emoji
+                    prediction, developed to explore practical
+                    applications of AI and deep learning.
+                </p>
+
+                <a
+                    href="https://github.com/VedikaBuilds/Emojify-deep-learning"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    View on GitHub →
+                </a>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Online Quiz Application</h3>
+
+                <p>
+                    A Java-based application developed to practice
+                    programming concepts and application
+                    development.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Cafe Finder UI</h3>
+
+                <p>
+                    A frontend user interface project created
+                    using HTML and CSS to practice web design
+                    and layout development.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Data Analysis Project</h3>
+
+                <p>
+                    A data analysis project using Excel and
+                    Tableau to explore data and create
+                    meaningful visualizations.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Education Section -->
+
+    <section class="education" id="education">
+
+        <h2 class="section-title">My Education</h2>
+
+        <div class="education-container">
+
+            <div class="education-card">
+
+                <h3>Bachelor of Technology (B.Tech)</h3>
+
+                <h4>Computer Science and Engineering</h4>
+
+                <p>MDU University</p>
+
+                <span>Currently Pursuing</span>
+
+            </div>
+
+            <div class="education-card">
+
+                <h3>Senior Secondary (Class 12th)</h3>
+
+                <h4>Science Stream</h4>
+
+                <p>Kendriya Vidyalaya No. 4, Delhi Cantt</p>
+
+                <span>CBSE Board</span>
+
+            </div>
+
+            <div class="education-card">
+
+                <h3>Secondary Education (Class 10th)</h3>
+
+                <p>Kendriya Vidyalaya No. 4, Delhi Cantt</p>
+
+                <span>CBSE Board</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact Section -->
+
+    <section class="contact" id="contact">
+
+        <h2 class="section-title">Let's Connect!</h2>
+
+        <p>
+            I am always interested in learning, collaborating
+            and exploring new opportunities.
+        </p>
+
+        <a
+            href="https://github.com/VedikaBuilds"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn"
+        >
+            GitHub Profile
+        </a>
+
+        <a
+            href="https://www.linkedin.com/in/vedika-080804v"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn"
+        >
+            LinkedIn Profile
+        </a>
+
+        <a
+            href="mailto:YOUR_EMAIL@gmail.com"
+            class="btn btn-outline"
+        >
+            Contact Me
+        </a>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>© 2026 Vedika Singh | Personal Portfolio</p>
+
+    </footer>
+
+</body>
+
+</html>
